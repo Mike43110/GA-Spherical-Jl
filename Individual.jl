@@ -6,8 +6,8 @@ const INIT_MAX = 10
 
 type Individual
   dim::Int
-  fitness::Real
-  chromosome::Array{Real}
+  fitness::Float32
+  chromosome::Array{Float32}
 
   function Individual(dim::Int)
     this = new()
@@ -19,7 +19,7 @@ type Individual
 end
 
 function updateFitness!(input::Individual)
-  total::Real = 0
+  total::Float32 = 0
   for i = 1:input.dim
     cur = input.chromosome[i]
     total += cur * cur
